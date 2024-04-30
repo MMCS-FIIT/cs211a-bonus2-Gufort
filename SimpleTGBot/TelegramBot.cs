@@ -1,97 +1,117 @@
 ﻿using System.Reflection.Metadata.Ecma335;
 
 namespace SimpleTGBot;
+
+using System.ComponentModel.Design;
 using Telegram.Bot;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+using Telegram.Bot.Types.ReplyMarkups;
 
 public class TelegramBot
 {
-    // Токен TG-бота. Можно получить у @BotFather
-    private const string BotToken = "ВАШ_ТОКЕН_ИДЕНТИФИКАЦИИ_БОТА";
-    
-    /// <summary>
-    /// Инициализирует и обеспечивает работу бота до нажатия клавиши Esc
-    /// </summary>
+    private const string BotToken = "7145548269:AAG0PUEp-0ZDS_QSsLPg8KuKUY0ChTPkwdg";  
     public async Task Run()
     {
-        // Если вам нужно хранить какие-то данные во время работы бота (массив информации, логи бота,
-        // историю сообщений для каждого пользователя), то это всё надо инициализировать в этом методе.
-        // TODO: Инициализация необходимых полей
-        
-        // Инициализируем наш клиент, передавая ему токен.
         var botClient = new TelegramBotClient(BotToken);
-        
-        // Служебные вещи для организации правильной работы с потоками
+
         using CancellationTokenSource cts = new CancellationTokenSource();
-        
-        // Разрешённые события, которые будет получать и обрабатывать наш бот.
-        // Будем получать только сообщения. При желании можно поработать с другими событиями.
         ReceiverOptions receiverOptions = new ReceiverOptions()
         {
             AllowedUpdates = new [] { UpdateType.Message }
         };
 
-        // Привязываем все обработчики и начинаем принимать сообщения для бота
         botClient.StartReceiving(
             updateHandler: OnMessageReceived,
             pollingErrorHandler: OnErrorOccured,
             receiverOptions: receiverOptions,
             cancellationToken: cts.Token
         );
-
-        // Проверяем что токен верный и получаем информацию о боте
         var me = await botClient.GetMeAsync(cancellationToken: cts.Token);
         Console.WriteLine($"Бот @{me.Username} запущен.\nДля остановки нажмите клавишу Esc...");
-        
-        // Ждём, пока будет нажата клавиша Esc, тогда завершаем работу бота
+
         while (Console.ReadKey().Key != ConsoleKey.Escape){}
 
-        // Отправляем запрос для остановки работы клиента.
         cts.Cancel();
     }
-    
+
     /// <summary>
     /// Обработчик события получения сообщения.
     /// </summary>
     /// <param name="botClient">Клиент, который получил сообщение</param>
     /// <param name="update">Событие, произошедшее в чате. Новое сообщение, голос в опросе, исключение из чата и т. д.</param>
     /// <param name="cancellationToken">Служебный токен для работы с многопоточностью</param>
-    async Task OnMessageReceived(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
+    public static async Task OnMessageReceived(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
     {
-        // Работаем только с сообщениями. Остальные события игнорируем
         var message = update.Message;
-        if (message is null)
-        {
-            return;
-        }
-        // Будем обрабатывать только текстовые сообщения.
-        // При желании можно обрабатывать стикеры, фото, голосовые и т. д.
-        //
-        // Обратите внимание на использованную конструкцию. Она эквивалентна проверке на null, приведённой выше.
-        // Подробнее об этом синтаксисе: https://medium.com/@mattkenefick/snippets-in-c-more-ways-to-check-for-null-4eb735594c09
-        if (message.Text is not { } messageText)
-        {
-            return;
-        }
-
-        // Получаем ID чата, в которое пришло сообщение. Полезно, чтобы отличать пользователей друг от друга.
         var chatId = message.Chat.Id;
-        
-        // Печатаем на консоль факт получения сообщения
-        Console.WriteLine($"Получено сообщение в чате {chatId}: '{messageText}'");
+        var sticker_hello = new InputFileUrl("https://chpic.su/_data/stickers/c/chefvk/chefvk_004.webp?v=1708211404");
+        var sticker_ok = new InputFileUrl("https://chpic.su/_data/stickers/c/chefvk/chefvk_009.webp?v=1708211404");
+        var sticker_complete = new InputFileUrl("https://chpic.su/_data/stickers/c/chefvk/chefvk_007.webp?v=1708211404");
+        var sticker_great = new InputFileUrl("https://chpic.su/_data/stickers/c/chefvk/chefvk_046.webp?v=1708211404");
+        var sticker_think = new InputFileUrl("https://chpic.su/_data/stickers/c/chef_vk/chef_vk_023.webp?v=1708182606");
 
-        // TODO: Обработка пришедших сообщений
-        
-        // Отправляем обратно то же сообщение, что и получили
-        Message sentMessage = await botClient.SendTextMessageAsync(
-            chatId: chatId,
-            text: "Ты написал:\n" + messageText,
-            cancellationToken: cancellationToken);
+        if (message.Text != null)
+        {
+            if (message.Text == "/start")
+            {
+                await botClient.SendTextMessageAsync(chatId, "Приветсвую! Я тот самый знаменитый шеф-повар из Италии. " +
+                    "Всмысле вы меня не знаете? Ну и ладно(. Тем не менее, я могу помочь вам с выбором блюда, а также с его готовкой. " +
+                    "Какие у вас будут предпочтения?", replyMarkup: GetButtons());
+                await botClient.SendStickerAsync(chatId, sticker_hello);
+            }
+            else
+            {
+                switch (message.Text)
+                {
+                    case "Завтрак":
+                        await botClient.SendTextMessageAsync(chatId, "Так, значит мы будем готовить завтрак."+
+                            " Если ли у вас какие-нибудь предпочтения на этот счет?."+
+                            " Постараюсь что-нибудь придумать.",
+                            replyMarkup: GetBreakfastButtons());
+                        await botClient.SendStickerAsync(chatId, sticker_think);
+                        break;
+                    default:
+                        await botClient.SendTextMessageAsync(chatId, "Неизвестная команда. "+
+                            "Попробуйте ввести /start, чтобы начать работу бота");
+                        break;
+                }
+            }
+        }
+
+        using (StreamWriter sr = new StreamWriter("Files\\logs.txt", true))
+        {
+            sr.WriteLine($"Получено сообщение в чате {chatId}: '{message.Text}'");
+        }
     }
 
+    private static IReplyMarkup? GetBreakfastButtons()
+    {
+        var keydoard_start = new ReplyKeyboardMarkup(new KeyboardButton("Старт"));
+        var keyboard = new ReplyKeyboardMarkup(new List<List<KeyboardButton>>
+        {
+            new List<KeyboardButton> {new KeyboardButton("Каша"), new KeyboardButton("Что-нибудь из яиц")},
+            new List<KeyboardButton> {new KeyboardButton("Блинчики"), new KeyboardButton("Быстрый завтрак")}
+        });
+
+        return keyboard;
+    }
+
+    private static IReplyMarkup GetButtons()
+    {
+        var keydoard_start = new ReplyKeyboardMarkup(new KeyboardButton("Старт"));
+        var keyboard = new ReplyKeyboardMarkup(new List<List<KeyboardButton>>
+        {
+            new List<KeyboardButton> {new KeyboardButton("Завтрак"), new KeyboardButton("Обед")},
+            new List<KeyboardButton> {new KeyboardButton("Ужин"), new KeyboardButton("Праздничные блюда")}
+        });
+
+        return keyboard;
+    }
+
+    // Обработчик событий нажатия на кнопки
     /// <summary>
     /// Обработчик исключений, возникших при работе бота
     /// </summary>
@@ -110,8 +130,11 @@ public class TelegramBot
             _ => exception.ToString()
         };
 
-        Console.WriteLine(errorMessage);
-        
+        using(StreamWriter sr = new StreamWriter("Files\\logs.txt", true))
+        {
+            sr.WriteLine(errorMessage+"\n");
+        }
+
         // Завершаем работу
         return Task.CompletedTask;
     }
