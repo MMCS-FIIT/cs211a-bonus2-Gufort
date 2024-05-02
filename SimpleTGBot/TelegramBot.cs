@@ -4,6 +4,8 @@ namespace SimpleTGBot;
 
 using System.ComponentModel.Design;
 using Telegram.Bot;
+using System.IO;
+using System.Text.RegularExpressions;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
@@ -68,10 +70,34 @@ public class TelegramBot
                 {
                     case "Завтрак":
                         await botClient.SendTextMessageAsync(chatId, "Так, значит мы будем готовить завтрак."+
-                            " Если ли у вас какие-нибудь предпочтения на этот счет?."+
+                            " Если ли у вас какие-нибудь предпочтения на этот счет?"+
                             " Постараюсь что-нибудь придумать.",
                             replyMarkup: GetBreakfastButtons());
                         await botClient.SendStickerAsync(chatId, sticker_think);
+                        break;
+                    case "Блинчики":
+                        await botClient.SendTextMessageAsync(chatId,"О, это мы запросто!");
+                        await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://gas-kvas.com/grafic/uploads/posts/2023-10/1696590503_gas-kvas-com-p-kartinki-blinchik-2.jpg"));
+                        var result_1 = WriteRecipe(1,2);
+                        await botClient.SendTextMessageAsync(chatId,result_1);
+                        break;
+                    case "Каша":
+                        var result_2 = WriteRecipe(2, 3);
+                        await botClient.SendTextMessageAsync(chatId, "Конечно, un momento, дорогой друг!");
+                        await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://img1.russianfood.com/dycontent/images_upl/478/big_477420.jpg"));
+                        await botClient.SendTextMessageAsync(chatId, result_2);
+                        break;
+                    case "Что-нибудь из яиц":
+                        var result_3 = WriteRecipe(3,4);
+                        await botClient.SendTextMessageAsync(chatId, "Сию минуту, caro amico!");
+                        await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://static.1000.menu/res/640/img/content-v2/60/4e/28288/omlet-na-kefire-na-skovorode_1657259528_21_max.jpg"));
+                        await botClient.SendTextMessageAsync(chatId, result_3);
+                        break;
+                    case "Быстрый завтрак":
+                        var result_4 = WriteRecipe(4,5);
+                        await botClient.SendTextMessageAsync(chatId, "Сейчас придумаем что-нибудь, amico!");
+                        await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://static.1000.menu/img/content-v2/7d/f0/66724/tvorog-s-yaicom-zavtrak-pp-za-5-minut_1659036125_9_max.jpg"));
+                        await botClient.SendTextMessageAsync (chatId, result_4);
                         break;
                     default:
                         await botClient.SendTextMessageAsync(chatId, "Неизвестная команда. "+
@@ -86,6 +112,18 @@ public class TelegramBot
             sr.WriteLine($"Получено сообщение в чате {chatId}: '{message.Text}'");
         }
     }
+
+    private static string WriteRecipe(int i, int j, string path = "Files\\recipe.txt")
+    {
+        string text = System.IO.File.ReadAllText(path);
+
+        int startIndex = text.IndexOf($"[{i}]") + $"[{i}]".Length;
+        int endIndex = text.IndexOf($"[{j}]");
+        string recipe = text.Substring(startIndex, endIndex - startIndex).Trim();
+
+        return recipe;
+    }
+
 
     private static IReplyMarkup? GetBreakfastButtons()
     {
@@ -110,6 +148,7 @@ public class TelegramBot
 
         return keyboard;
     }
+
 
     // Обработчик событий нажатия на кнопки
     /// <summary>
