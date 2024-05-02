@@ -38,8 +38,7 @@
               "RelativeToolTip": "SimpleTGBot\\Files\\recipe.txt",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-04-30T13:55:40.78Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-30T13:55:40.78Z"
             },
             {
               "$type": "Document",
@@ -51,8 +50,7 @@
               "RelativeToolTip": "SimpleTGBot\\Files\\logs.txt",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-04-29T13:03:43.622Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-29T13:03:43.622Z"
             },
             {
               "$type": "Document",
@@ -62,7 +60,7 @@
               "RelativeDocumentMoniker": "SimpleTGBot\\TelegramBot.cs",
               "ToolTip": "C:\\Users\\PC\\Desktop\\My_TGBOT\\cs211a-bonus2-Gufort\\SimpleTGBot\\TelegramBot.cs",
               "RelativeToolTip": "SimpleTGBot\\TelegramBot.cs",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAqwEgAAABTAAAA",
+              "ViewState": "AQIAADMAAAAAAAAAAAAIwEoAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-29T12:49:33.66Z",
               "EditorCaption": ""
@@ -77,8 +75,7 @@
               "RelativeToolTip": "SimpleTGBot\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T12:49:28.815Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-29T12:49:28.815Z"
             }
           ]
         }
