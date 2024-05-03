@@ -140,6 +140,53 @@ public class TelegramBot
                         var result_8 = WriteRecipe(8, 9);
                         await botClient.SendTextMessageAsync(chatId, result_8);
                         break;
+                    case "Ужин":
+                        await botClient.SendTextMessageAsync(chatId, "Отличная идея! По такому поводу у месть несколько интересных блюд. "+
+                            "Будут ли у вас какие-то предпочтения на этот счет, amico?", replyMarkup: GetEveningMealButtons());
+                        await botClient.SendStickerAsync(chatId, sticker_great);
+                        break;
+                    case "Мясное":
+                        await botClient.SendTextMessageAsync(chatId, "Meraviglioso! Это мы можем.");
+                        await botClient.SendStickerAsync(chatId, sticker_ok);
+                        Thread.Sleep(1500);
+                        var result_9 = WriteRecipe(9, 10);
+                        await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://static.1000.menu/res/640/img/content-v2/e7/82/7979/sochnye-otbivnye-iz-svininy-nejnye-myagkie_1603951843_19_max.jpg"));
+                        await botClient.SendTextMessageAsync(chatId, result_9);
+                        break;
+                    case "С грибами":
+                        await botClient.SendTextMessageAsync(chatId, "Запросто, un momento!");
+                        await botClient.SendStickerAsync(chatId, sticker_ok);
+                        Thread.Sleep(1500);
+                        var result_10 = WriteRecipe(10, 11);
+                        await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://static.1000.menu/img/content-v2/91/40/71965/farsh-s-gribami-na-skovorode_1675971327_0_max.jpg"));
+                        await botClient.SendTextMessageAsync(chatId, result_10);
+                        break;
+                    case "Легкое":
+                        await botClient.SendTextMessageAsync(chatId, "Сейчас сделаем!");
+                        await botClient.SendStickerAsync(chatId, sticker_ok);
+                        Thread.Sleep(1500);
+                        var result_11 = WriteRecipe(11, 12);
+                        await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://static.1000.menu/res/640/img/content-v2/67/16/3363/baklajany-tushenye-s-ovoshchami-bystro-i-prosto_1602740303_17_max.jpg"));
+                        await botClient.SendTextMessageAsync(chatId, result_11);
+                        break;
+                    case "На твое усмотрение":
+                        await botClient.SendTextMessageAsync(chatId, "Oh, mio Dio! Сделаю в лучшем виде!");
+                        await botClient.SendStickerAsync(chatId, sticker_great);
+                        Thread.Sleep(1500);
+                        var result_12 = WriteRecipe(12, 13);
+                        await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://static.1000.menu/res/640/img/content-v2/f7/3c/18410/pasta-s-moreproduktami-v-slivochnom-souse_1614501210_19_max.jpg"));
+                        await botClient.SendTextMessageAsync(chatId, result_12);
+                        break;
+                    case "Праздничные блюда":
+                        await botClient.SendTextMessageAsync(chatId, "Прекрасно! Займемся приготовлением праздничных блюд."+
+                            " К какому празднику мы готовимся?", replyMarkup: GetCelebrationButtons());
+                        await botClient.SendStickerAsync(chatId, sticker_think);
+                        break;
+                    case "Новый год":
+                        await botClient.SendTextMessageAsync(chatId, "Намечается веселье, надо подготовиться!");
+                        await botClient.SendStickerAsync(chatId, sticker_great);
+
+                        break;
                     default:
                         await botClient.SendTextMessageAsync(chatId, "Неизвестная команда. "+
                             "Попробуйте ввести /start, чтобы начать работу бота");
@@ -163,6 +210,30 @@ public class TelegramBot
         string recipe = text.Substring(startIndex, endIndex - startIndex).Trim();
 
         return recipe;
+    }
+
+    private static IReplyMarkup? GetCelebrationButtons()
+    {
+        var keydoard_start = new ReplyKeyboardMarkup(new KeyboardButton("Старт"));
+        var keyboard = new ReplyKeyboardMarkup(new List<List<KeyboardButton>>
+        {
+            new List<KeyboardButton> {new KeyboardButton("Новый год"), new KeyboardButton("Пасха")},
+            new List<KeyboardButton> {new KeyboardButton("Майские"), new KeyboardButton("Просто семейный ")}
+        });
+
+        return keyboard;
+    }
+
+    private static IReplyMarkup? GetEveningMealButtons()
+    {
+        var keydoard_start = new ReplyKeyboardMarkup(new KeyboardButton("Старт"));
+        var keyboard = new ReplyKeyboardMarkup(new List<List<KeyboardButton>>
+        {
+            new List<KeyboardButton> {new KeyboardButton("Мясное"), new KeyboardButton("С грибами")},
+            new List<KeyboardButton> {new KeyboardButton("Легкое"), new KeyboardButton("На твое усмотрение")}
+        });
+
+        return keyboard;
     }
 
     private static IReplyMarkup? GetDinnerButtons()
