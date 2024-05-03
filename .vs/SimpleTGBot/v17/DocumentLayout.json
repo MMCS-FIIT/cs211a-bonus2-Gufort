@@ -7,12 +7,20 @@
       "RelativeMoniker": "D:0:0:{BFA186C8-2B12-4779-8691-9914B54DD319}|SimpleTGBot\\SimpleTGBot.csproj|solutionrelative:simpletgbot\\telegrambot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BFA186C8-2B12-4779-8691-9914B54DD319}|SimpleTGBot\\SimpleTGBot.csproj|c:\\users\\pc\\desktop\\my_tgbot\\cs211a-bonus2-gufort\\simpletgbot\\files\\logs.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{BFA186C8-2B12-4779-8691-9914B54DD319}|SimpleTGBot\\SimpleTGBot.csproj|solutionrelative:simpletgbot\\files\\logs.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{0F16BC06-9029-469D-851C-449B888CD9F6}|TestProject1\\TestProject1.csproj|c:\\users\\pc\\desktop\\my_tgbot\\cs211a-bonus2-gufort\\testproject1\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F16BC06-9029-469D-851C-449B888CD9F6}|TestProject1\\TestProject1.csproj|solutionrelative:testproject1\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFA186C8-2B12-4779-8691-9914B54DD319}|SimpleTGBot\\SimpleTGBot.csproj|c:\\users\\pc\\desktop\\my_tgbot\\cs211a-bonus2-gufort\\simpletgbot\\files\\tests.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{BFA186C8-2B12-4779-8691-9914B54DD319}|SimpleTGBot\\SimpleTGBot.csproj|solutionrelative:simpletgbot\\files\\tests.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BFA186C8-2B12-4779-8691-9914B54DD319}|SimpleTGBot\\SimpleTGBot.csproj|c:\\users\\pc\\desktop\\my_tgbot\\cs211a-bonus2-gufort\\simpletgbot\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BFA186C8-2B12-4779-8691-9914B54DD319}|SimpleTGBot\\SimpleTGBot.csproj|solutionrelative:simpletgbot\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFA186C8-2B12-4779-8691-9914B54DD319}|SimpleTGBot\\SimpleTGBot.csproj|c:\\users\\pc\\desktop\\my_tgbot\\cs211a-bonus2-gufort\\simpletgbot\\files\\logs.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{BFA186C8-2B12-4779-8691-9914B54DD319}|SimpleTGBot\\SimpleTGBot.csproj|solutionrelative:simpletgbot\\files\\logs.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BFA186C8-2B12-4779-8691-9914B54DD319}|SimpleTGBot\\SimpleTGBot.csproj|c:\\users\\pc\\desktop\\my_tgbot\\cs211a-bonus2-gufort\\simpletgbot\\files\\recipe.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -26,11 +34,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "tests.txt",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\My_TGBOT\\cs211a-bonus2-Gufort\\SimpleTGBot\\Files\\tests.txt",
+              "RelativeDocumentMoniker": "SimpleTGBot\\Files\\tests.txt",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\My_TGBOT\\cs211a-bonus2-Gufort\\SimpleTGBot\\Files\\tests.txt",
+              "RelativeToolTip": "SimpleTGBot\\Files\\tests.txt",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-05-03T20:40:51.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\My_TGBOT\\cs211a-bonus2-Gufort\\TestProject1\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "TestProject1\\UnitTest1.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\My_TGBOT\\cs211a-bonus2-Gufort\\TestProject1\\UnitTest1.cs",
+              "RelativeToolTip": "TestProject1\\UnitTest1.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAADwvxIAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T20:31:25.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "recipe.txt",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\My_TGBOT\\cs211a-bonus2-Gufort\\SimpleTGBot\\Files\\recipe.txt",
               "RelativeDocumentMoniker": "SimpleTGBot\\Files\\recipe.txt",
@@ -42,7 +76,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "logs.txt",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\My_TGBOT\\cs211a-bonus2-Gufort\\SimpleTGBot\\Files\\logs.txt",
               "RelativeDocumentMoniker": "SimpleTGBot\\Files\\logs.txt",
@@ -60,14 +94,14 @@
               "RelativeDocumentMoniker": "SimpleTGBot\\TelegramBot.cs",
               "ToolTip": "C:\\Users\\PC\\Desktop\\My_TGBOT\\cs211a-bonus2-Gufort\\SimpleTGBot\\TelegramBot.cs",
               "RelativeToolTip": "SimpleTGBot\\TelegramBot.cs",
-              "ViewState": "AQIAABQBAAAAAAAAAAAAwEIAAABVAAAA",
+              "ViewState": "AQIAAPAAAAAAAAAAAAAqwAEBAABMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-29T12:49:33.66Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\My_TGBOT\\cs211a-bonus2-Gufort\\SimpleTGBot\\Program.cs",
               "RelativeDocumentMoniker": "SimpleTGBot\\Program.cs",
@@ -75,7 +109,8 @@
               "RelativeToolTip": "SimpleTGBot\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T12:49:28.815Z"
+              "WhenOpened": "2024-04-29T12:49:28.815Z",
+              "EditorCaption": ""
             }
           ]
         }

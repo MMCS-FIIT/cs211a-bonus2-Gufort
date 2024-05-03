@@ -252,10 +252,10 @@ public class TelegramBot
         }
     }
 
-    private static string WriteRecipe(int i, int j, string path = "Files\\recipe.txt")
+    public static string WriteRecipe(int i, int j, string path = "Files\\recipe.txt")
     {
         string text = System.IO.File.ReadAllText(path);
-
+        if (!text.Contains($"[{i}]") || !text.Contains($"[{j}]")) return "";
         int startIndex = text.IndexOf($"[{i}]") + $"[{i}]".Length;
         int endIndex = text.IndexOf($"[{j}]");
         string recipe = text.Substring(startIndex, endIndex - startIndex).Trim();
