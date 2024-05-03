@@ -185,8 +185,37 @@ public class TelegramBot
                     case "Новый год":
                         await botClient.SendTextMessageAsync(chatId, "Намечается веселье, надо подготовиться!");
                         await botClient.SendStickerAsync(chatId, sticker_great);
-
+                        Thread.Sleep(1500);
+                        var result_13 = WriteRecipe(13, 14);
+                        await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://static.1000.menu/res/640/img/content-v2/be/c8/40643/krabovyi-salat-klassicheskii-bez-risa_1611409506_9_max.jpg"));
+                        await botClient.SendTextMessageAsync(chatId, result_13);
                         break;
+                    case "Пасха":
+                        await botClient.SendTextMessageAsync(chatId, "Отлично, mio amico! Сейчас разберемся.");
+                        await botClient.SendStickerAsync(chatId, sticker_ok);
+                        Thread.Sleep(1500);
+                        var result_14 = WriteRecipe(14, 15);
+                        await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://static.1000.menu/res/640/img/content-v2/41/29/46897/kulich-prostoi-legkii_1589530927_22_max.jpg"));
+                        await botClient.SendTextMessageAsync(chatId, result_14);
+                        break;
+                    case "Майские":
+                        await botClient.SendTextMessageAsync(chatId, "У меня даже есть идея!");
+                        await botClient.SendStickerAsync(chatId, sticker_great);
+                        Thread.Sleep(1500);
+                        var result_15 = WriteRecipe(15, 16);
+                        await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://static.1000.menu/res/640/img/content-v2/44/9c/34176/shashlyk-iz-svininy-na-uglyax_1625648787_0_max.jpg"));
+                        await botClient.SendTextMessageAsync(chatId, result_15);
+                        break;
+                    case "Просто семейный":
+                        await botClient.SendTextMessageAsync(chatId, "Хорошее идея, un momento!");
+                        await botClient.SendStickerAsync(chatId, sticker_ok);
+                        Thread.Sleep(1500);
+                        var result_16 = WriteRecipe(16, 17);
+                        await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://static.1000.menu/img/content-v2/ad/9f/6917/kuritsa-na-soli_1610949660_9_max.jpg"));
+                        await botClient.SendTextMessageAsync(chatId, result_16);
+                        await botClient.SendTextMessageAsync(chatId, "Скажите, я могу еще чем-то помочь?", replyMarkup: GetEndButtons());
+                        break;
+                    
                     default:
                         await botClient.SendTextMessageAsync(chatId, "Неизвестная команда. "+
                             "Попробуйте ввести /start, чтобы начать работу бота");
@@ -212,13 +241,24 @@ public class TelegramBot
         return recipe;
     }
 
+    private static IReplyMarkup? GetEndButtons()
+    {
+        var keydoard_start = new ReplyKeyboardMarkup(new KeyboardButton("Старт"));
+        var keyboard = new ReplyKeyboardMarkup(new List<List<KeyboardButton>>
+        {
+            new List<KeyboardButton> {new KeyboardButton("Назад в каталог"), new KeyboardButton("Нет, спасибо")},
+        });
+
+        return keyboard;
+    }
+
     private static IReplyMarkup? GetCelebrationButtons()
     {
         var keydoard_start = new ReplyKeyboardMarkup(new KeyboardButton("Старт"));
         var keyboard = new ReplyKeyboardMarkup(new List<List<KeyboardButton>>
         {
             new List<KeyboardButton> {new KeyboardButton("Новый год"), new KeyboardButton("Пасха")},
-            new List<KeyboardButton> {new KeyboardButton("Майские"), new KeyboardButton("Просто семейный ")}
+            new List<KeyboardButton> {new KeyboardButton("Майские"), new KeyboardButton("Просто семейный")}
         });
 
         return keyboard;
