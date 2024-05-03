@@ -76,6 +76,7 @@ public class TelegramBot
                         await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://gas-kvas.com/grafic/uploads/posts/2023-10/1696590503_gas-kvas-com-p-kartinki-blinchik-2.jpg"));
                         var result_1 = WriteRecipe(1,2);
                         await botClient.SendTextMessageAsync(chatId,result_1);
+                        await botClient.SendTextMessageAsync(chatId, "Скажите, я могу еще чем-то помочь?", replyMarkup: GetEndButtons());
                         break;
                     case "Каша":
                         var result_2 = WriteRecipe(2, 3);
@@ -84,6 +85,7 @@ public class TelegramBot
                         Thread.Sleep(1500);
                         await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://img1.russianfood.com/dycontent/images_upl/478/big_477420.jpg"));
                         await botClient.SendTextMessageAsync(chatId, result_2);
+                        await botClient.SendTextMessageAsync(chatId, "Скажите, я могу еще чем-то помочь?", replyMarkup: GetEndButtons());
                         break;
                     case "Что-нибудь из яиц":
                         var result_3 = WriteRecipe(3,4);
@@ -92,6 +94,7 @@ public class TelegramBot
                         Thread.Sleep(1500);
                         await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://static.1000.menu/res/640/img/content-v2/60/4e/28288/omlet-na-kefire-na-skovorode_1657259528_21_max.jpg"));
                         await botClient.SendTextMessageAsync(chatId, result_3);
+                        await botClient.SendTextMessageAsync(chatId, "Скажите, я могу еще чем-то помочь?", replyMarkup: GetEndButtons());
                         break;
                     case "Быстрый завтрак":
                         var result_4 = WriteRecipe(4,5);
@@ -100,6 +103,7 @@ public class TelegramBot
                         Thread.Sleep(1500);
                         await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://static.1000.menu/img/content-v2/7d/f0/66724/tvorog-s-yaicom-zavtrak-pp-za-5-minut_1659036125_9_max.jpg"));
                         await botClient.SendTextMessageAsync (chatId, result_4);
+                        await botClient.SendTextMessageAsync(chatId, "Скажите, я могу еще чем-то помочь?", replyMarkup: GetEndButtons());
                         break;
                     case "Обед":
                         await botClient.SendTextMessageAsync(chatId, "Хм, займемся приготовлением обеденных блюд." +
@@ -115,6 +119,7 @@ public class TelegramBot
                         await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://static.1000.menu/res/640/img/content-v2/41/60/32006/borsch-so-svejei-kapustoi-svekloi-i-myasom_1630127663_4_max.jpg"));
                         var result_5 = WriteRecipe(5, 6);
                         await botClient.SendTextMessageAsync(chatId, result_5);
+                        await botClient.SendTextMessageAsync(chatId, "Скажите, я могу еще чем-то помочь?", replyMarkup: GetEndButtons());
                         break;
                     case "Из курицы":
                         await botClient.SendTextMessageAsync(chatId, "Nessun problema, сейчас сделаем!");
@@ -123,6 +128,7 @@ public class TelegramBot
                         var result_6 = WriteRecipe(6, 7);
                         await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://static.1000.menu/res/640/img/content-v2/dd/22/19030/lapsha-vok-s-kuricei-i-ovoshchami_1613557344_14_max.jpg"));
                         await botClient.SendTextMessageAsync(chatId, result_6);
+                        await botClient.SendTextMessageAsync(chatId, "Скажите, я могу еще чем-то помочь?", replyMarkup: GetEndButtons());
                         break;
                     case "Что-то попроще":
                         await botClient.SendTextMessageAsync(chatId, "Ну попроще так попроще, будет сделано!");
@@ -131,6 +137,7 @@ public class TelegramBot
                         await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://static.1000.menu/res/640/img/content/28024/jarenye-draniki-na-skovorode_1532114706_9_max.jpg"));
                         var result_7 = WriteRecipe(7, 8);
                         await botClient.SendTextMessageAsync(chatId, result_7);
+                        await botClient.SendTextMessageAsync(chatId, "Скажите, я могу еще чем-то помочь?", replyMarkup: GetEndButtons());
                         break;
                     case "Из крупы":
                         await botClient.SendTextMessageAsync(chatId, "Это я мигом, mio amico!");
@@ -139,6 +146,7 @@ public class TelegramBot
                         await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://static.1000.menu/res/640/img/content-v2/22/45/39422/ris-na-skovorode_1613550003_8_max.jpg"));
                         var result_8 = WriteRecipe(8, 9);
                         await botClient.SendTextMessageAsync(chatId, result_8);
+                        await botClient.SendTextMessageAsync(chatId, "Скажите, я могу еще чем-то помочь?", replyMarkup: GetEndButtons());
                         break;
                     case "Ужин":
                         await botClient.SendTextMessageAsync(chatId, "Отличная идея! По такому поводу у месть несколько интересных блюд. "+
@@ -152,6 +160,7 @@ public class TelegramBot
                         var result_9 = WriteRecipe(9, 10);
                         await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://static.1000.menu/res/640/img/content-v2/e7/82/7979/sochnye-otbivnye-iz-svininy-nejnye-myagkie_1603951843_19_max.jpg"));
                         await botClient.SendTextMessageAsync(chatId, result_9);
+                        await botClient.SendTextMessageAsync(chatId, "Скажите, я могу еще чем-то помочь?", replyMarkup: GetEndButtons());
                         break;
                     case "С грибами":
                         await botClient.SendTextMessageAsync(chatId, "Запросто, un momento!");
@@ -160,6 +169,7 @@ public class TelegramBot
                         var result_10 = WriteRecipe(10, 11);
                         await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://static.1000.menu/img/content-v2/91/40/71965/farsh-s-gribami-na-skovorode_1675971327_0_max.jpg"));
                         await botClient.SendTextMessageAsync(chatId, result_10);
+                        await botClient.SendTextMessageAsync(chatId, "Скажите, я могу еще чем-то помочь?", replyMarkup: GetEndButtons());
                         break;
                     case "Легкое":
                         await botClient.SendTextMessageAsync(chatId, "Сейчас сделаем!");
@@ -168,6 +178,7 @@ public class TelegramBot
                         var result_11 = WriteRecipe(11, 12);
                         await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://static.1000.menu/res/640/img/content-v2/67/16/3363/baklajany-tushenye-s-ovoshchami-bystro-i-prosto_1602740303_17_max.jpg"));
                         await botClient.SendTextMessageAsync(chatId, result_11);
+                        await botClient.SendTextMessageAsync(chatId, "Скажите, я могу еще чем-то помочь?", replyMarkup: GetEndButtons());
                         break;
                     case "На твое усмотрение":
                         await botClient.SendTextMessageAsync(chatId, "Oh, mio Dio! Сделаю в лучшем виде!");
@@ -176,6 +187,7 @@ public class TelegramBot
                         var result_12 = WriteRecipe(12, 13);
                         await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://static.1000.menu/res/640/img/content-v2/f7/3c/18410/pasta-s-moreproduktami-v-slivochnom-souse_1614501210_19_max.jpg"));
                         await botClient.SendTextMessageAsync(chatId, result_12);
+                        await botClient.SendTextMessageAsync(chatId, "Скажите, я могу еще чем-то помочь?", replyMarkup: GetEndButtons());
                         break;
                     case "Праздничные блюда":
                         await botClient.SendTextMessageAsync(chatId, "Прекрасно! Займемся приготовлением праздничных блюд."+
@@ -189,6 +201,7 @@ public class TelegramBot
                         var result_13 = WriteRecipe(13, 14);
                         await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://static.1000.menu/res/640/img/content-v2/be/c8/40643/krabovyi-salat-klassicheskii-bez-risa_1611409506_9_max.jpg"));
                         await botClient.SendTextMessageAsync(chatId, result_13);
+                        await botClient.SendTextMessageAsync(chatId, "Скажите, я могу еще чем-то помочь?", replyMarkup: GetEndButtons());
                         break;
                     case "Пасха":
                         await botClient.SendTextMessageAsync(chatId, "Отлично, mio amico! Сейчас разберемся.");
@@ -197,6 +210,7 @@ public class TelegramBot
                         var result_14 = WriteRecipe(14, 15);
                         await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://static.1000.menu/res/640/img/content-v2/41/29/46897/kulich-prostoi-legkii_1589530927_22_max.jpg"));
                         await botClient.SendTextMessageAsync(chatId, result_14);
+                        await botClient.SendTextMessageAsync(chatId, "Скажите, я могу еще чем-то помочь?", replyMarkup: GetEndButtons());
                         break;
                     case "Майские":
                         await botClient.SendTextMessageAsync(chatId, "У меня даже есть идея!");
@@ -205,6 +219,7 @@ public class TelegramBot
                         var result_15 = WriteRecipe(15, 16);
                         await botClient.SendPhotoAsync(chatId, new InputFileUrl("https://static.1000.menu/res/640/img/content-v2/44/9c/34176/shashlyk-iz-svininy-na-uglyax_1625648787_0_max.jpg"));
                         await botClient.SendTextMessageAsync(chatId, result_15);
+                        await botClient.SendTextMessageAsync(chatId, "Скажите, я могу еще чем-то помочь?", replyMarkup: GetEndButtons());
                         break;
                     case "Просто семейный":
                         await botClient.SendTextMessageAsync(chatId, "Хорошее идея, un momento!");
@@ -215,7 +230,14 @@ public class TelegramBot
                         await botClient.SendTextMessageAsync(chatId, result_16);
                         await botClient.SendTextMessageAsync(chatId, "Скажите, я могу еще чем-то помочь?", replyMarkup: GetEndButtons());
                         break;
-                    
+                    case "Назад в каталог":
+                        await botClient.SendTextMessageAsync(chatId, "С чем еще вам помочь, mio amico?", replyMarkup: GetButtons());
+                        await botClient.SendStickerAsync(chatId, sticker_ok);
+                        break;
+                    case "Нет, спасибо":
+                        await botClient.SendTextMessageAsync(chatId, "В таком случае было приятно иметь с вами дело! Ci vediamo, мой друг!");
+                        await botClient.SendStickerAsync(chatId, sticker_complete);
+                        break;
                     default:
                         await botClient.SendTextMessageAsync(chatId, "Неизвестная команда. "+
                             "Попробуйте ввести /start, чтобы начать работу бота");
